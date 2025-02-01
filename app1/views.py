@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login 
 
 # Create your views here.
 def indexpage(request):
@@ -21,8 +22,14 @@ def registration(request):
         
 
     return render(request,'registration.html')
-def login(request):
+def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         pass1=request.POST.get('pass')
+        user = authenticate(request,username=username,password = pass1)
+        if user is not None:
+            login(request,user)
+            return redirect('indexpage')
+        else:
+            return HttpResponse("Username or Password is incorrect!")
     return render(request,'login.html')
