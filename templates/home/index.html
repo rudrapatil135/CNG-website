@@ -51,7 +51,7 @@
         }
 
         .nav-link {
-            color: #007bff;
+            color:rgb(0, 0, 0);
         }
 
         .nav-link:hover {
@@ -92,20 +92,20 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">CNG Booking</a>
+            <a class="navbar-brand" href="{% url 'indexpage' %}">CNG Booking</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home;allign:center">Home</a>
+                        <a class="nav-link active" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="register.html">Register/Login</a>
+                        <a class="nav-link" href="{% url 'registration' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="booking.html">Book Now</a>
+                        <a class="nav-link" href="{% url 'login' %}">Book Now</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -114,6 +114,7 @@
             </div>
         </div>
     </nav>
+    <br>
 
     <section id="home" class="hero">
         <div class="text-center">
